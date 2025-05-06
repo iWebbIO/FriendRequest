@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Let's Connect!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fceabb, #f8b500);
+    color: #4b2e83;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    transition: direction 0.3s ease;
+    pointer-events: none;
+  }
+
+  .container {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    padding: 25px 20px 40px 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Heart Shapes in background */
+  .heart {
+    position: absolute;
+    fill: #f08a5d;
+    opacity: 0.15;
+    animation: floatUp 7s ease-in-out infinite;
+  }
+  .heart2 {
+    fill: #b83b5e;
+    opacity: 0.12;
+    animation-delay: 2s;
+  }
+  .heart3 {
+    fill: #6a2c70;
+    opacity: 0.1;
+    animation-delay: 4s;
+  }
+
+  /* Floating hearts animation */
+  @keyframes floatUp {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+    50% { transform: translateY(-15px) scale(1.1); opacity: 0.3; }
+  }
+
+  /* Language switcher */
+  .language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 4px;
+    z-index: 9999;
+    background: #4b2e83;
+    padding: 4px;
+    border-radius: 6px;
+  }
+
+  .language-button {
+    min-width: 80px;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: white;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+  }
+
+  .language-button:hover,
+  .language-button.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #ae7aac;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    color: #5a4278;
+  }
+
+  /* Different heart shapes around content */
+  .decor-heart {
+    width: 28px;
+    height: 28px;
+    fill: #f76c6c;
+    stroke: #fff;
+    stroke-width: 1.3;
+    margin: 0 6px;
+    vertical-align: middle;
+  }
+
+  /* Footer note */
+  .footer-note {
+    font-size: 0.75rem;
+    color: #a383bc;
+    margin-top: 35px;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 400px) {
+    .container {
+      max-width: 90vw;
+    }
+    .lang-switch {
+      top: 10px;
+      right: 10px;
+      left: auto;
+    }
+  }
+
+  /* RTL for Persian */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+  }
+
+  /* Ensure clickable elements work */
+  .container {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  .language-switcher {
+    position: fixed;
+    z-index: 3;
+    pointer-events: auto;
+  }
+
+  .heart, .heart2, .heart3 {
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  a {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto !important;
+  }
+
+  /* Link styling */
+  a {
+    color: #4b2e83;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+    transition: opacity 0.2s;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+  <!-- Language Switcher -->
+  <div class="language-switcher" role="group" aria-label="Language switcher">
+    <button class="language-button active" data-lang="en" aria-pressed="true">English</button>
+    <button class="language-button" data-lang="fa" aria-pressed="false">فارسی</button>
+  </div>
+  <div class="container" role="main" aria-label="Friendship flyer" id="main-container">
+    <!-- Floating hearts background SVGs -->
+    <svg class="heart" style="top:15px; left:20px;" viewBox="0 0 24 24" >
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3
+      c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 
+      22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <svg class="heart heart2" style="bottom:50px; right:30px;" viewBox="0 0 24 24" >
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+    <svg class="heart heart3" style="top: 140px; right: 60px;" viewBox="0 0 24 24" >
+      <path d="M12 21.35l-2.5-2c-5-4-7.5-6-7.5-9a5 5 0 0 1 10 0 5 5 0 0 1 
+      10 0c0 3-2.5 5-7.5 9z"/>
+    </svg>
+
+    <h1 id="heading">Hey there! <svg class="decor-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3
+      c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 
+      22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></h1>
+
+    <h2 id="subheading">I'm really happy to meet you in class today! 💖</h2>
+
+    <p id="para1">I'm a trans girl and looking to make friends. If you want someone to chat, hang out, or share some laughs with, I'd love to get to know you better!</p>
+
+    <p id="para2">Feel free to message me anytime — friendship makes everything better.</p>
+
+    <p id="para3">See you soon! 🌈💜</p>
+
+    <p class="footer-note" id="footerNote">-- A little note to brighten your day :3 --</p>
+  </div>
+
+<script>
+window.addEventListener('load', function() {
+  const container = document.getElementById('main-container');
+  const heading = document.getElementById('heading');
+  const buttons = document.querySelectorAll('.language-button');
+
+  const heartSVG = '<svg class="decor-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3 c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+
+  const content = {
+    en: {
+      heading: "Hey there! ",
+      subheading: "I'm really happy to meet you both in class today! 💖",
+      para1: "I'm a trans girl new here and looking to make wonderful friends. If you want someone to chat, hang out, or share some laughs with, I'd love to get to know you better!",
+      para2: 'Feel free to connect with me anytime — friendship makes everything better. Find me on Telegram: <a href="https://t.me/iwebbio" target="_blank">@iwebbio</a>',
+      para3: "See you soon! 🌈💜",
+      footerNote: "-- A little note to brighten your day --"
+    },
+    fa: {
+      heading: "سلام! ",
+      subheading: "خیلی خوشحالم که امروز تو کلاس شما رو دیدم! 💖",
+      para1: "من یک دختر ترنس هستم و دنبال دوستای باحال می‌گردم. اگه دوست دارید با کسی صحبت کنید، وقت بگذرونید یا کمی بخندید، خیلی خوشحال می‌شم که بیشتر با هم آشنا بشیم!",
+      para2: 'هر وقت خواستید می‌تونید بهم پیام بدید — دوستی همه چیز رو بهتر می‌کنه.<br> تلگرام من: <a href="https://t.me/iwebbio" target="_blank">@iwebbio</a>',
+      para3: "به زودی می‌بینمتون! 🌈💜",
+      footerNote: "- یه یادداشت کوچولو برای روشن کردن روزتون :) -"
+    }
+  };
+
+  // Function to update the language
+  function updateLanguage(isPersian) {
+    if (isPersian) {
+      container.classList.add('rtl');
+      container.dir = 'rtl';
+      heading.innerHTML = content.fa.heading + heartSVG;
+      document.getElementById('subheading').textContent = content.fa.subheading;
+      document.getElementById('para1').textContent = content.fa.para1;
+      document.getElementById('para2').innerHTML = content.fa.para2;
+      document.getElementById('para3').textContent = content.fa.para3;
+      document.getElementById('footerNote').textContent = content.fa.footerNote;
+    } else {
+      container.classList.remove('rtl');
+      container.dir = 'ltr';
+      heading.innerHTML = content.en.heading + heartSVG;
+      document.getElementById('subheading').textContent = content.en.subheading;
+      document.getElementById('para1').textContent = content.en.para1;
+      document.getElementById('para2').innerHTML = content.en.para2;
+      document.getElementById('para3').textContent = content.en.para3;
+      document.getElementById('footerNote').textContent = content.en.footerNote;
+    }
+  }
+
+  // Handle language switching
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const lang = this.dataset.lang;
+      const isPersian = lang === 'fa';
+      
+      // Update active state
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-pressed', 'true');
+      
+      // Update content
+      updateLanguage(isPersian);
+    });
+  });
+
+  // Initialize with English
+  updateLanguage(false);
+});
+</script>
+</body>
+</html>
